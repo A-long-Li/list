@@ -8,7 +8,6 @@ package Controller
 
 import (
 	"github.com/gin-gonic/gin"
-	"list/DAO"
 	"list/Models"
 )
 
@@ -31,7 +30,7 @@ func UpdateTodo(c *gin.Context) {
 	if err != nil {
 		return
 	}
-	if err = DAO.DB.Save(&list).Error; err != nil {
+	if err = Models.UpdateList(list); err != nil {
 		c.JSON(200, gin.H{
 			"error": err.Error(),
 		})

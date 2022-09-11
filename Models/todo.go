@@ -40,8 +40,8 @@ func GetById(id string) (todo *Todo, err error) {
 	return
 }
 
-// UpdateById 更新事件
-func UpdateById(todo *Todo) error {
+// UpdateList 更新事件
+func UpdateList(todo *Todo) error {
 	return DAO.DB.Save(todo).Error
 }
 
