@@ -33,7 +33,8 @@ func GetAllList() (list []*Todo, err error) {
 
 // GetById 使用id获取待办事件 (未启用)
 func GetById(id string) (todo *Todo, err error) {
-	if err = DAO.DB.Debug().Where("id=?", id).First(&todo).Error; err != nil {
+	todo = new(Todo)
+	if err = DAO.DB.Debug().Where("id=?", id).First(todo).Error; err != nil {
 		return nil, err
 	}
 	return
@@ -41,7 +42,8 @@ func GetById(id string) (todo *Todo, err error) {
 
 // UpdateById 更新事件
 func UpdateById(todo *Todo) error {
-	return DAO.DB.Save(todo).Error
+	err := DAO.DB.Save(todo).Error
+	return err
 }
 
 // DeleteById 删除
