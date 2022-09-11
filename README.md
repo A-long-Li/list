@@ -1,6 +1,6 @@
 # list
 ### 简介
-使用gin编写的简单的待办表单
+使用`gin`+`gorm`编写的简单的待办表单
 ### 界面样式
 ![图片](https://user-images.githubusercontent.com/76742505/189521659-4d719f55-4d6d-4129-9d70-15df1e2df705.png)
 ### 食用指南
