@@ -42,8 +42,7 @@ func GetById(id string) (todo *Todo, err error) {
 
 // UpdateById 更新事件
 func UpdateById(todo *Todo) error {
-	err := DAO.DB.Save(todo).Error
-	return err
+	return DAO.DB.Save(todo).Error
 }
 
 // DeleteById 删除
